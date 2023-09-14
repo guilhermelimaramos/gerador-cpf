@@ -1,4 +1,4 @@
-class ValidCpf {
+export default class ValidaCpf {
   constructor(cpf) {
     Object.defineProperty(this, 'cpfClean', {
       writable: false,
@@ -42,14 +42,10 @@ class ValidCpf {
     if (this.cpfClean.length !== 11) return false;
     if (this.isSequence()) return 'The cpf is a sequence'
     const isEqual = this.generateNewCpf(this.cpfClean)
-    
-    if (isEqual) return 'CPF is Valid!!!'
+    if (isEqual) return true
 
-    return 'CPF is Invalid!!!!'
+    return false
   }
 }
 
-const validCpf = new ValidCpf('705.484.450-52')
-// const validCpf = new ValidCpf('222.222.222-22') 
-
-console.log(validCpf.valid())
+console.log('Cheguei Aqui!!!')
